@@ -486,7 +486,24 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The director needs everyones emails to send changes to the venue.
+const emails = [];
+runners.forEach(runner => emails.push(runner.email));
+console.log(emails);
 
 // Problem 2
+// The director wants to send plagues to each company that particpated find each company name
+const companies = [];
+runners.forEach(runner => {
+  if (!companies.some(arrItem => arrItem === runner.company_name)) {
+    companies.push(runner.company_name);
+  }
+});
 
+console.log(companies);
 // Problem 3
+// Vimbo's donation was never recieved the director needs to know how much they pledged to send an invoice
+
+const latePayment = runners.filter(runner => runner.company_name === 'Vimbo');
+
+console.log(latePayment);
